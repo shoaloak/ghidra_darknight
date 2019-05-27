@@ -65,7 +65,8 @@ if __name__ == "__main__":
     tool = xmldoc.getElementsByTagName("TOOL")[0]
     tool.setAttribute("TOOL_NAME", "CodeBrowserDarkNight")
 
-    dragon_path = expanduser("~") + "/.ghidra/.ghidra-9.0/tools/black_dragon.png"
+    dragon_path = expanduser("~") + '/'.join(sys.argv[1].split('/')[:4]) + "/black_dragon.png"
+
     icon = xmldoc.getElementsByTagName("ICON")[0]
     icon.setAttribute("LOCATION", dragon_path)
     copyfile("black_dragon.png", dragon_path)
